@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --canvas-bg: #09090b;
+  --border-subtle: #1c1c24;
+  --border-muted: #262636;
+  --neon-primary: #5865f2;
+  --neon-primary-glow: rgba(88, 101, 242, 0.25);
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--canvas-bg);
+  color: #e4e4e7;
+}
+
+.node-shadow {
+  box-shadow:
+    0 0 0 1px var(--border-muted),
+    0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.glow-ring-blue    { box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.30), 0 0 12px rgba(59, 130, 246, 0.08); }
+.glow-ring-purple  { box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.30), 0 0 12px rgba(168, 85, 247, 0.08); }
+.glow-ring-zinc    { box-shadow: 0 0 0 1px rgba(161, 161, 170, 0.25), 0 0 8px rgba(161, 161, 170, 0.05); }
+
+.react-flow__handle {
+  width: 6px !important;
+  height: 6px !important;
+  border: 1.5px solid rgba(228, 228, 231, 0.5) !important;
+  background: rgba(15, 15, 20, 0.85) !important;
+}
+
+.react-flow__handle:hover {
+  border-color: var(--neon-primary) !important;
+  box-shadow: 0 0 6px var(--neon-primary-glow);
+}
+
+.react-flow__edge-path {
+  stroke: #2a2a3a !important;
+  stroke-width: 1 !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #525270 !important;
+  stroke-width: 1.25 !important;
+}
+
+@keyframes node-pop-in {
+  0%   { opacity: 0; transform: scale(0.94); }
+  60%  { transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.react-flow__node.asset-node-enter {
+  animation: node-pop-in 0.25s ease-out forwards;
+}
+
+.react-flow__minimap {
+  background: rgba(15, 15, 20, 0.85) !important;
+  border: 1px solid var(--border-muted) !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls-button {
+  background: rgba(24, 24, 30, 0.9) !important;
+  border-color: var(--border-muted) !important;
+  fill: #a1a1aa !important;
+}
+
+.is-drop-active .react-flow__pane {
+  box-shadow: inset 0 0 0 1px rgba(59,130,246,0.12), inset 0 0 40px rgba(59,130,246,0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.react-flow__controls-button:hover {
+  background: rgba(36, 36, 48, 0.95) !important;
+  fill: #e4e4e7 !important;
+}
