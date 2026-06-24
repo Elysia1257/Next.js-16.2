@@ -32,6 +32,6 @@
     "prisma": "..."
   },
   "scripts": {
-    "postinstall": "prisma generate"
+    "postinstall": "npx prisma generate"
   }
 }
